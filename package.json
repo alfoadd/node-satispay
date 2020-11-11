@@ -23,6 +23,7 @@
 		"url": "https://github.com/alfoadd/node-satispay/issues"
 	},
 	"homepage": "https://github.com/alfoadd/node-satispay",
+	"funding": "https://github.com/alfoadd/node-satispay#support-my-projects",
 	"devDependencies": {
 		"jest": "^26.5.3"
 	},
