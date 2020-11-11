@@ -51,7 +51,7 @@ Promises and callbacks are both supported.
 ```js
 satispay.create_payment({
   flow: 'MATCH_CODE',
-  amount_unit,
+  amount_unit: 100,
   currency: 'EUR'
 }, null, (err, payment) => {
   // ...
