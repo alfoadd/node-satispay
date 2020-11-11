@@ -29,19 +29,19 @@ npm i node-satispay
 3. Create config options, with parameters (key_id, private_key, sandbox).
     ```js
     satispay.config({
-	  key_id: 'your_key_id',
-	  private_key: 'your_private_key', //`-----BEGIN RSA PRIVATE KEY-----\n[...]\n-----END RSA PRIVATE KEY-----`
-	  sandbox: true
+      key_id: 'your_key_id',
+      private_key: 'your_private_key', //`-----BEGIN RSA PRIVATE KEY-----\n[...]\n-----END RSA PRIVATE KEY-----`
+      sandbox: true
     })
     ```
 
-5. Invoke the API (eg: create a Satispay payment) with required parameters (eg: flow, amount_unit, currency).
+1. Invoke the API (eg: create a Satispay payment) with required parameters (eg: flow, amount_unit, currency).
     ```js
     const payment = await satispay.create_payment({
-	  flow: 'MATCH_CODE',
-	  amount_unit: 100,
-	  currency: 'EUR'
-	})
+      flow: 'MATCH_CODE',
+      amount_unit: 100,
+      currency: 'EUR'
+    })
     ```
 
 
@@ -60,7 +60,7 @@ satispay.create_payment({
 
 ## API
 
-Pleas refer to the [official documentation](https://developers.satispay.com/reference) for more information regarding the parameters.
+Please refer to the [official documentation](https://developers.satispay.com/reference) for more information regarding the parameters.
 
 `Host`, `Date`, `Digest` and `Authorization` headers are always added automatically.
 
