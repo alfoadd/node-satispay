@@ -1,0 +1,33 @@
+{
+	"name": "node-satispay",
+	"version": "1.0.0",
+	"description": "Node.js wrapper for the Satispay API",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest --watchAll"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/alfoadd/node-satispay.git"
+	},
+	"keywords": [
+		"satispay",
+		"payment",
+		"api",
+		"wrapper",
+		"node"
+	],
+	"author": "Alfonso Adduci",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/alfoadd/node-satispay/issues"
+	},
+	"homepage": "https://github.com/alfoadd/node-satispay",
+	"devDependencies": {
+		"jest": "^26.5.3"
+	},
+	"dependencies": {
+		"axios": "^0.20.0",
+		"crypto": "^1.0.1"
+	}
+}
