@@ -49,14 +49,13 @@ npm i node-satispay
 
 Promises and callbacks are both supported.
 ```js
-satispay.create_payment({
+	satispay.create_payment({
 		flow: 'MATCH_CODE',
 		amount_unit,
 		currency: 'EUR'
 	}, null, (err, payment) => {
 		// ...
-	}
-)
+	})
 ```
 
 

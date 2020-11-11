@@ -1,2 +1,1 @@
-
-module.exports = require('./lib/satispay');
+module.exports = require('./lib/satispay')
