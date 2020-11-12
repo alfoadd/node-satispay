@@ -126,7 +126,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
     | external_code | Order ID or payment external identifier. Max length allowed is 50 chars. | string |
     | callback_url | The url that will be called with an http GET request when the Payment changes state. When url is called a Get payment details can be called to know the new Payment status. Note that {uuid} will be replaced with the Payment ID | string |
     | metadata | Generic field that can be used to store generic info . The field `phone_number` can be used to pre-fill the mobile number. If integrating the Web-Redirect `redirect_url` is mandatory | object |
-    | consumer_uid | Unique ID of the consumer that has to accept the payment. To retrieve the customer uid use the [Retrive customer](####retrieve-customer) API (required with the MATCH_USER flow only) | string |
+    | consumer_uid | Unique ID of the consumer that has to accept the payment. To retrieve the customer uid use the [Retrive customer](#retrieve-consumer) API (required with the MATCH_USER flow only) | string |
 
   - ##### `extra_headers` (`object`)
     | field | description | type |
@@ -201,7 +201,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
   #### Retrieve daily closure
   API to retrieve shop daily closure
 
-    retrieve_daily_closure(day, [query_params], [extra_headers], [callback(err, res)])
+    retrieve_daily_closure(daily_closure_date, [query_params], [extra_headers], [callback(err, res)])
 
   - ##### **`daily_closure_date`** (`string`)
       The day on which retrieve the daily closure (format `yyyyMMdd`, eg: 20201231)
