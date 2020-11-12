@@ -88,9 +88,10 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 `Host`, `Date`, `Digest` and `Authorization` headers are always added automatically.
 
+
 ### Authentication
 
-  #### Obtain the KeyId
+#### Obtain the KeyId
 
   API to retrieve the KeyId
 
@@ -102,7 +103,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
   - **`token`** (`string`)
     Activation code that can be generated from the Satispay Dashboard (or provided manually for Sandbox account)
 
-  #### Test the Authentication
+#### Test the Authentication
 
   API to test your authentication.
 
@@ -110,8 +111,10 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
     test_authentication([callback(err, res)])
 
+
 ### Payments
-  #### Create payment
+
+#### Create payment
 
   API to create a payment
 
@@ -145,7 +148,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
     | x-satispay-tracking-code | Tracking code used by Satispay commercial partners | string
 
 
-  #### Get payment details
+#### Get payment details
 
   API to retrieve the detail of a specific payment
 
@@ -160,7 +163,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
     | x-satispay-response-wait-time | Seconds that the call will be hanging, waiting for a payment status change. Maximum value is 60 seconds. | string |
 
 
-  #### Get shop-payments list
+#### Get shop-payments list
 
   API to retrieve the list of payments for a specific shop. The shop is automatically filtered based on the KeyID used in the authorisation header.
 
@@ -186,7 +189,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
     | x-satispay-appv | Software version | string |
     | x-satispay-tracking-code | Tracking code used by Satispay commercial partners | string
 
-  #### Update payment
+#### Update payment
 
   API to update the state or metadata of a payment
 
@@ -203,8 +206,10 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
   - `extra_headers` (`object`)
 
+
 ### Shop daily closure
-  #### Retrieve daily closure
+
+#### Retrieve daily closure
 
   API to retrieve shop daily closure
 
@@ -222,7 +227,8 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 
 ### Pre-authorized
-  #### Create authorization
+
+#### Create authorization
 
   API to request a new pre-authorized token
 
@@ -240,7 +246,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
     |---|---|---|
     | Idempotency-Key | The idempotent token of the request | string |
 
-  #### Get authorization
+#### Get authorization
 
   API to get details about pre-authorized token
 
@@ -252,9 +258,9 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
   - `extra_headers` (`object`)
 
 
-
 ### Fund lock
-  #### Create mqtt certificates
+
+#### Create mqtt certificates
 
   API to create a PEM certificate and the private key for a shop mqtt device
 
@@ -262,7 +268,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
   - `extra_headers` (`object`)
 
-  #### Open session
+#### Open session
 
   API to open a session from a fund lock
 
@@ -280,7 +286,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 
 
-  #### Create session event
+#### Create session event
 
   API to create an event for an open session
 
@@ -303,7 +309,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 
 
-  #### Get session details
+#### Get session details
 
   API to retrieve the detail of a specific session
 
@@ -315,7 +321,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
   - `extra_headers` (`object`)
 
 
-  #### Update session
+#### Update session
 
   API to change the state of the session
 
@@ -333,7 +339,8 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 
 ### Consumers
-  #### Retrieve consumer
+
+#### Retrieve consumer
 
   API to retrieve a customer uid from the phone number
 
