@@ -149,6 +149,21 @@ describe('Satispay API', () => {
 	})
 
 	describe('Calls', () => {
+		describe('Consumers', () => {
+			test('Retrieve consumer', async (done) => {
+				const satispay = require('../lib/satispay').config(config)
+
+				if (config.phone_number) {
+					const consumer = await satispay.retrieve_consumer(config.phone_number)
+
+					expect(consumer).toBeTruthy()
+					expect(consumer.id).toBeTruthy()
+				}
+
+				done()
+			})
+		})
+
 		describe('Payments', () => {
 			test('Create payment', async (done) => {
 				const satispay = require('../lib/satispay').config(config)

@@ -1,6 +1,6 @@
 {
 	"name": "node-satispay",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "Node.js wrapper for the Satispay API",
 	"main": "index.js",
 	"scripts": {
