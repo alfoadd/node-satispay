@@ -91,17 +91,19 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 ### Authentication
 
   #### Obtain the KeyId
+
   API to retrieve the KeyId
 
     obtain_key_id(public_key, token, [callback(err, res)])
 
-  - ##### **`public key`** (`string`)
+  - **`public key`** (`string`)
     RSA public key, in pkcs8 encoding
 
-  - ##### **`token`** (`string`)
+  - **`token`** (`string`)
     Activation code that can be generated from the Satispay Dashboard (or provided manually for Sandbox account)
 
   #### Test the Authentication
+
   API to test your authentication.
 
   *Please note that this API works on Sandbox endpoint only.*
@@ -110,11 +112,12 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 ### Payments
   #### Create payment
+
   API to create a payment
 
     create_payment(body_params, [extra_headers], [callback(err, res)])
 
-  - ##### **`body_params`** (`object`)
+  - **`body_params`** (`object`)
     | field | description | type |
     |---|---|---|
     | **flow** `required` | The flow of the payment (MATCH_CODE, MATCH_USER, REFUND or PRE_AUTHORIZED)  | string |
@@ -128,7 +131,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
     | metadata | Generic field that can be used to store generic info . The field `phone_number` can be used to pre-fill the mobile number. If integrating the Web-Redirect `redirect_url` is mandatory | object |
     | consumer_uid | Unique ID of the consumer that has to accept the payment. To retrieve the customer uid use the [Retrive customer](#retrieve-consumer) API (required with the MATCH_USER flow only) | string |
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
     | field | description | type |
     |---|---|---|
     | Idempotency-Key | The idempotent token of the request | string |
@@ -143,25 +146,27 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 
   #### Get payment details
+
   API to retrieve the detail of a specific payment
 
     get_payment_details(id, [extra_headers], [callback(err, res)])
 
-  - ##### **`id`** (`string`)
+  - **`id`** (`string`)
     The id of the payment to retrieve
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
     | field | description | type |
     |---|---|---|
     | x-satispay-response-wait-time | Seconds that the call will be hanging, waiting for a payment status change. Maximum value is 60 seconds. | string |
 
 
   #### Get shop-payments list
+
   API to retrieve the list of payments for a specific shop. The shop is automatically filtered based on the KeyID used in the authorisation header.
 
     get_shop_payments_list([query_params], [extra_headers], [callback(err, res)])
 
-  - ##### `query_params` (`object`)
+  - `query_params` (`object`)
     | field | description | type |
     |---|---|---|
     | status | Filter by the payment status ACCEPTED, PENDING or CANCELED | string |
@@ -169,7 +174,7 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
     | starting_after | Is the id that defines your place in the list when you make a payment list request | string |
     | starting_after_timestamp | Is the timestamp (in milliseconds) that defines your place in the list when you make a payment list request | string |
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
     | field | description | type |
     |---|---|---|
     | x-satispay-deviceinfo | Info about the device | string |
@@ -182,87 +187,93 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
     | x-satispay-tracking-code | Tracking code used by Satispay commercial partners | string
 
   #### Update payment
+
   API to update the state or metadata of a payment
 
     update_payment(id, body_params, [extra_headers], [callback(err, res)])
 
-  - ##### **`id`** (`string`)
+  - **`id`** (`string`)
     The id of the payment to update
 
-  - ##### **`body_params`** (`object`)
+  - **`body_params`** (`object`)
     | field | description | type |
     |---|---|---|
     | **action** `required` | The update action to perform (ACCEPT, CANCEL or CANCEL_OR_REFUND). | string |
     | metadata | Generic field that can be used to store the order_id. | object |
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
 
 ### Shop daily closure
   #### Retrieve daily closure
+
   API to retrieve shop daily closure
 
     retrieve_daily_closure(daily_closure_date, [query_params], [extra_headers], [callback(err, res)])
 
-  - ##### **`daily_closure_date`** (`string`)
+  - **`daily_closure_date`** (`string`)
       The day on which retrieve the daily closure (format `yyyyMMdd`, eg: 20201231)
 
-  - ##### `query_params` (`object`)
+  - `query_params` (`object`)
     | field | description | type |
     |---|---|---|
     | generate_pdf | Generate the pdf with the daily closure amounts | boolean |
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
 
 
 ### Pre-authorized
   #### Create authorization
+
   API to request a new pre-authorized token
 
     create_authorization([body_params], [extra_headers], [callback(err, res)])
 
-  - ##### `body_params` (`object`)
+  - `body_params` (`object`)
     | field | description | type |
     |---|---|---|
     | reason | The reason why the token is being request | string |
     | callback_url | The url that will be called with an http GET request if the pre-authorization status changes. Note that {uuid} will be replaced with the authorization token | string |
     | metadata | Generic field that can be used to store additional data. The field `phone_number` can be used to pre-fill the mobile number. If integrating the Web-Redirect `redirect_url` is mandatory. | object |
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
     | field | description | type |
     |---|---|---|
     | Idempotency-Key | The idempotent token of the request | string |
 
   #### Get authorization
+
   API to get details about pre-authorized token
 
     get_authorization(id, [extra_headers], [callback(err, res)])
 
-  - ##### **`id`** (`string`)
+  - **`id`** (`string`)
     Pre-Authorized Payment Token
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
 
 
 
 ### Fund lock
   #### Create mqtt certificates
+
   API to create a PEM certificate and the private key for a shop mqtt device
 
     create_mqtt_certificates([extra_headers], [callback(err, res)])
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
 
   #### Open session
+
   API to open a session from a fund lock
 
     open_session(body_params, [extra_headers], [callback(err, res)])
 
-  - ##### **`body_params`** (`object`)
+  - **`body_params`** (`object`)
     | field | description | type |
     |---|---|---|
     | **fund_lock_uid** `required` | Unique ID of the fund lock obtained from mqtt client | string |
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
     | field | description | type |
     |---|---|---|
     | Idempotency-Key | The idempotent token of the request | string |
@@ -270,21 +281,22 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 
   #### Create session event
+
   API to create an event for an open session
 
     create_session_event(id, body_params, [extra_headers], [callback(err, res)])
 
-  - ##### **`id`** (`string`)
+  - **`id`** (`string`)
     The ID of the session
 
-  - ##### **`body_params`** (`object`)
+  - **`body_params`** (`object`)
     | field | description | type |
     |---|---|---|
     | **operation** `required` | The operation to perform on the amount (ADD/REMOVE) | string |
     | **amount_unit** `required` | Amount of the session event in cents | string |
     | **currency** `required` | Currency of the session event | string |
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
     | field | description | type |
     |---|---|---|
     | Idempotency-Key | The idempotent token of the request | string |
@@ -292,42 +304,45 @@ Please refer to the [official documentation](https://developers.satispay.com/ref
 
 
   #### Get session details
+
   API to retrieve the detail of a specific session
 
     get_session_details(id, [extra_headers], [callback(err, res)])
 
-  - ##### **`id`** (`string`)
+  - **`id`** (`string`)
     The ID of the session
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
 
 
   #### Update session
+
   API to change the state of the session
 
     update_session(id, body_params, extra_headers, [callback(err, res)])
 
-  - ##### **`id`** (`string`)
+  - **`id`** (`string`)
     The ID of the session
 
-  - ##### **`body_params`** (`object`)
+  - **`body_params`** (`object`)
     | field | description | type |
     |---|---|---|
     | **action** `required` | The operation to perform on the session (CLOSE) | string |
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
 
 
 ### Consumers
   #### Retrieve consumer
+
   API to retrieve a customer uid from the phone number
 
     retrieve_consumer(phone_number, [extra_headers], [callback(err, res)])
 
-  - ##### **`phone_number`** (`string`)
+  - **`phone_number`** (`string`)
     The phone number formatted with its prefix (eg. +390000000000)
 
-  - ##### `extra_headers` (`object`)
+  - `extra_headers` (`object`)
 
 
 ---
